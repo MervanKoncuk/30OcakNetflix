@@ -2,9 +2,11 @@ from django.shortcuts import render
 from .models import *
 from user.models import *
 # Create your views here.
+# index sayfası
 def index(request):
     return render(request, 'index.html')
 
+# film sayfası
 def movies(request, slug, pk):
     filmler = Movie.objects.all()
     profiller = Profile.objects.filter(owner = request.user)
